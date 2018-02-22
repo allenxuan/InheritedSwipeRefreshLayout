@@ -6,7 +6,7 @@
 ## Screenshot
 <a href="" target="_blank">
   <img alt=""
-       src="/screenshots/demo1.mp4"
+       src="/screenshots/demo1.gif"
        width="40%">
 </a>
 
