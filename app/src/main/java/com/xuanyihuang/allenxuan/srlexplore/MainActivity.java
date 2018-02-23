@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new MyAdapter());
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
         swipeRefreshLayout = findViewById(R.id.srl);
+        swipeRefreshLayout.setCustomHeaderLayout(R.layout.isrl_default_header_layout_60dp, 60);
         swipeRefreshLayout.setOnRefreshListener(new InheritedSwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

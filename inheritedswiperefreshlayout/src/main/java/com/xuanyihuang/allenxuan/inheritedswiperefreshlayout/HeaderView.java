@@ -15,7 +15,6 @@ import android.widget.FrameLayout;
 
 class HeaderView extends FrameLayout {
     private View mViewRoot = null;
-    private int mCustomLayout = -1;
 
     private Animation.AnimationListener mListener;
 
@@ -29,16 +28,12 @@ class HeaderView extends FrameLayout {
 
     HeaderView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
-        if(mCustomLayout > 0){
-            mViewRoot = LayoutInflater.from(context).inflate(mCustomLayout, this);
-        }else {
-            mViewRoot = LayoutInflater.from(context).inflate(R.layout.isrl_default_header_layout, this);
-        }
     }
 
-    void setCustomLayout(@LayoutRes int layoutRes){
-        mCustomLayout = layoutRes;
+    void inflateLayout(@LayoutRes int layoutRes){
+        if(getContext() != null) {
+            mViewRoot = LayoutInflater.from(getContext()).inflate(layoutRes, this);
+        }
     }
 
     public void setAnimationListener(Animation.AnimationListener listener) {
